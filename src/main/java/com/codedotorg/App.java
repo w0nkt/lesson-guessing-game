@@ -9,9 +9,9 @@ public class App extends Application {
         launch();
     }
 
+    @Override
     public void start(Stage primaryStage) {
         GuessingGame game = new GuessingGame(primaryStage, 300, 250);
         game.startGame();
     }
-
 }
