@@ -2,22 +2,13 @@ package com.codedotorg;
 
 public class GameLogic {
 
-    /** The left boundary of the range to guess */
     private int left;
-
-    /** The right boundary of the range to guess */
     private int right;
-
-    /** The middle of the range to guess */
     private int guess;
-
-    /** The number of guesses made */
     private int numGuesses;
 
     /**
-     * This constructor initializes the game logic by setting the left and right boundaries
-     * of the game to 1 and 100 respectively. It also sets the guess to the middle of the
-     * left and right boundaries and initializes the number of guesses to 1.
+     * Initializes the guessing range and first guess.
      */
     public GameLogic() {
         left = 1;
@@ -27,27 +18,21 @@ public class GameLogic {
     }
 
     /**
-     * Returns the current guess.
-     *
-     * @return the current guess
+     * Returns the computer's current guess.
      */
     public int getGuess() {
         return guess;
     }
 
     /**
-     * Returns the number of guesses made by the player.
-     *
-     * @return the number of guesses made by the player
+     * Returns the number of guesses made so far.
      */
     public int getNumGuesses() {
         return numGuesses;
     }
 
     /**
-     * This method updates the left boundary of the range of possible numbers to guess,
-     * sets the guess to the middle of the new range, updates the number of guesses made.
-     * @return void
+     * User says their number is higher.
      */
     public void guessHigher() {
         left = guess + 1;
@@ -56,14 +41,11 @@ public class GameLogic {
     }
 
     /**
-     * Decreases the guess range by setting the right boundary to the current guess
-     * minus one, then updates the guess to the midpoint of the new range. Also
-     * increments the number of guesses made.
+     * User says their number is lower.
      */
     public void guessLower() {
         right = guess - 1;
         guess = (left + right) / 2;
         numGuesses++;
     }
-    
 }
